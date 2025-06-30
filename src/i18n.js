@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -5,37 +6,27 @@ const resources = {
   en: {
     translation: {
       title: "AI Hospitality Assistant",
-      region: "Region",
+      europe: "Europe",
+      usa: "USA",
+      caribbean: "Caribbean",
+      asia: "Asia",
       getTiming: "Get Service Timing",
-      recommendedTiming: "Recommended Timing",
-      minutesBetweenDrinks: "minutes between drink orders"
-    }
-  },
-  es: {
-    translation: {
-      title: "Asistente de Hospitalidad AI",
-      region: "Región",
-      getTiming: "Obtener Tiempo de Servicio",
-      recommendedTiming: "Tiempo Recomendado",
-      minutesBetweenDrinks: "minutos entre pedidos de bebidas"
+      recommended: "Recommended Timing",
+      defaultTiming: "5-10 minutes",
+      defaultPrompt: "Press button to get timing"
     }
   },
   nl: {
     translation: {
-      title: "AI Gastvrijheidsassistent",
-      region: "Regio",
-      getTiming: "Haal Service Timing op",
-      recommendedTiming: "Aanbevolen Tijd",
-      minutesBetweenDrinks: "minuten tussen drankbestellingen"
-    }
-  },
-  pap: {
-    translation: {
-      title: "Asistente di AI pa Hospitalidat",
-      region: "Region",
-      getTiming: "Haña Tempo di Servicio",
-      recommendedTiming: "Tempo Recomendá",
-      minutesBetweenDrinks: "minutunan entre orden di bebida"
+      title: "AI Hospitality Assistent",
+      europe: "Europa",
+      usa: "VS",
+      caribbean: "Cariben",
+      asia: "Azië",
+      getTiming: "Haal Service Tijd",
+      recommended: "Aanbevolen Tijd",
+      defaultTiming: "5-10 minuten",
+      defaultPrompt: "Druk op de knop voor tijd"
     }
   }
 };

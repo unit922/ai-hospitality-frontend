@@ -1,31 +1,31 @@
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import './i18n';
 
 function App() {
   const [region, setRegion] = useState("USA");
   const [timing, setTiming] = useState("");
+  const { t } = useTranslation();
 
   const getServiceTiming = () => {
     fetch(`/api/service-timing?region=${region}`)
       .then((res) => res.json())
-      .then((data) => setTiming(data.timing || "5-10 minutes"))
-      .catch((err) => {
-        console.error(err);
-        setTiming("5-10 minutes");
-      });
+      .then((data) => setTiming(data.timing || t('defaultTiming')))
+      .catch(() => setTiming(t('defaultTiming')));
   };
 
   return (
     <div className="App">
-      <h1>AI Hospitality Assistant</h1>
+      <h1>{t('title')}</h1>
       <select value={region} onChange={(e) => setRegion(e.target.value)}>
-        <option value="Europe">Europe</option>
-        <option value="USA">USA</option>
-        <option value="Caribbean">Caribbean</option>
-        <option value="Asia">Asia</option>
+        <option value="Europe">{t('europe')}</option>
+        <option value="USA">{t('usa')}</option>
+        <option value="Caribbean">{t('caribbean')}</option>
+        <option value="Asia">{t('asia')}</option>
       </select>
-      <button onClick={getServiceTiming}>Get Service Timing</button>
-      <h2>Recommended Timing: {timing || "Press button to get timing"}</h2>
+      <button onClick={getServiceTiming}>{t('getTiming')}</button>
+      <h2>{t('recommended')}: {timing || t('defaultPrompt')}</h2>
     </div>
   );
 }
